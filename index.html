@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Писатели-врачи | Связь медицины и литературы</title>
+    <meta name="description" content="Школьный проект Гюмрийской старшей школы №1 — Писатели-врачи: влияние медицинской профессии на литературное творчество">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>Писатели-врачи</h1>
+        <p class="subtitle">Связь медицины и литературы</p>
+        
+        <div class="lang-buttons">
+            <button onclick="setLang('ru')" class="active" id="btn-ru">РУС</button>
+            <button onclick="setLang('am')" id="btn-am">ՀԱՅ</button>
+        </div>
+    </div>
+</header>
+
+<section class="intro">
+    <div class="container">
+        <h2>Введение</h2>
+        <p class="quote">"Оба они, врач и писатель, страстно интересуются людьми..."</p>
+        <p class="author">— Андре Моруа</p>
+        
+        <p>Многие врачи, отведав «сладкую отраву литературного труда», меняли скальпель на перо, чтобы исцелять уже не тело, а душу человека.</p>
+        
+        <div class="project-info">
+            <p><strong>Гюмрийская старшая школа №1</strong></p>
+            <p>Участники проекта: Анжела Аристакесян, Жанна Арутюнян, Жирайр Чархифалакян, Рипсиме Задурян, Бабкен Самвелян, Гоар Папанян, Рузанна Авагян</p>
+        </div>
+    </div>
+</section>
+
+<section class="writers">
+    <div class="container">
+        <h2>Известные писатели-врачи</h2>
+        
+        <!-- Армянские авторы -->
+        <div class="writer-grid">
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Anton_Chekhov_1889.jpg/800px-Anton_Chekhov_1889.jpg" alt="Антон Чехов">
+                <h3>Антон Павлович Чехов</h3>
+                <p>Врач и великий русский писатель. Медицина обогатила его наблюдательностью, гуманизмом и точностью стиля.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg" alt="Михаил Булгаков">
+                <h3>Михаил Афанасьевич Булгаков</h3>
+                <p>Автор «Записок юного врача» и «Морфия». Врач, переживший ужасы войны и зависимости.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png" alt="Артур Конан Дойл">
+                <h3>Артур Конан Дойл</h3>
+                <p>Создатель Шерлока Холмса. Медицинская дедукция стала основой знаменитого метода детектива.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Oliver_Sacks_2012.jpg" alt="Оливер Сакс">
+                <h3>Оливер Сакс</h3>
+                <p>Невролог и писатель. Автор книг «Человек, который принял свою жену за шляпу» и «Пробуждения».</p>
+            </div>
+
+            <!-- Армянские писатели-врачи -->
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg" alt="Рубен Севак">
+                <h3>Рубен Севак (Чилинкирян)</h3>
+                <p>Врач и поэт. Автор цикла «Страницы, вырванные из дневника врача». Погиб во время Геноцида армян в 1915 году.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://via.placeholder.com/300x400/8B0000/FFFFFF?text=Церенц" alt="Церенц">
+                <h3>Церенц (Овсеп Шишманян)</h3>
+                <p>Врач и исторический романист. Судебно-медицинский эксперт в Константинополе.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://via.
+placeholder.com/300x400/8B0000/FFFFFF?text=Патканян" alt="Рафаел Патканян">
+                <h3>Рафаел Патканян</h3>
+                <p>Поэт и просветитель. Учился на медицинском факультете, но оставил медицину из-за страха смерти.</p>
+            </div>
+
+            <div class="card" data-lang="ru">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Fran%C3%A7ois_Rabelais.jpg/800px-Fran%C3%A7ois_Rabelais.jpg" alt="Франсуа Рабле">
+                <h3>Франсуа Рабле</h3>
+                <p>Врач, писатель, философ эпохи Возрождения. Автор знаменитого романа «Гаргантюа и Пантагрюэль».</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Гюмрийская старшая школа №1 • 2026</p>
+        <p>Проект выполнен учениками 11 класса</p>
+    </div>
+</footer>
+
+<script>
+function setLang(lang) {
+    document.querySelectorAll('.lang-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    if(lang === 'am') {
+        document.getElementById('btn-am').classList.add('active');
+        alert('Հայերեն տարբերակը գտնվում է մշակման փուլում։ Շուտով կավելացվի։');
+        // Здесь в будущем можно добавить полный перевод на армянский
+    } else {
+        document.getElementById('btn-ru').classList.add('active');
+        // Сейчас русский — основной язык
+    }
+}
+</script>
+
+</body>
+</html>
