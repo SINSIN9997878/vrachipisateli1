@@ -11,9 +11,7 @@
             --gold: #d4af37;
             --light-gold: #f0d48a;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #0a1f3d 0%, #1e3a6b 100%);
@@ -21,14 +19,12 @@
             line-height: 1.8;
             min-height: 100vh;
         }
-
         header {
             background: rgba(10, 31, 61, 0.96);
             padding: 3rem 0;
             text-align: center;
             border-bottom: 5px solid var(--gold);
         }
-
         .school { font-size: 1.3rem; color: var(--light-gold); margin-bottom: 12px; }
         h1 {
             font-family: 'Playfair Display', serif;
@@ -37,8 +33,11 @@
             text-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
         }
         .subtitle { font-size: 1.65rem; color: #a8c0e0; margin-top: 15px; }
-        .members { margin-top: 20px; font-size: 1.15rem; color: #b0c4de; }
-
+        .members {
+            margin-top: 20px;
+            font-size: 1.15rem;
+            color: #b0c4de;
+        }
         .intro {
             max-width: 1000px;
             margin: 80px auto;
@@ -52,7 +51,6 @@
             margin: 45px 0;
             line-height: 1.95;
         }
-
         .section {
             max-width: 1250px;
             margin: 0 auto;
@@ -65,13 +63,11 @@
             margin-bottom: 60px;
             font-family: 'Playfair Display', serif;
         }
-
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 35px;
         }
-
         .card {
             background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
@@ -82,7 +78,7 @@
         }
         .card:hover {
             transform: translateY(-20px);
-            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 30px 70px rgba(212, 175, 55, 0.45);
         }
         .card img {
             width: 100%;
@@ -96,13 +92,22 @@
         .card h3 {
             color: var(--gold);
             font-size: 1.75rem;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+        }
+        .card .poet-badge {
+            display: inline-block;
+            background: #d4af37;
+            color: #0a1f3d;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
         .card p {
             color: #c0d0e8;
             font-size: 1.1rem;
         }
-
         /* Modal */
         .modal {
             display: none;
@@ -133,7 +138,6 @@
             color: var(--gold);
             cursor: pointer;
         }
-
         footer {
             text-align: center;
             padding: 70px 20px 45px;
@@ -143,142 +147,131 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="school">Гюмрийская старшая школа №1</div>
+        <h1>Писатели-врачи</h1>
+        <p class="subtitle">Связь медицины и литературы</p>
+        <div class="members">
+            Русский проект • 2026<br>
+            Анжела Аристакесян, Жанна Арутюнян, Жирайр Чархифалакян, Рипсиме Задурян, Бабкен Самвелян, Гоар Папанян, Рузанна Авагян
+        </div>
+    </header>
 
-<header>
-<div class="school">Гюмрийская старшая школа №1</div>
-    <h1>Писатели-врачи</h1>
-    <p class="subtitle">Связь медицины и литературы</p>
-    <div class="members">
-        Русский проект • 2026<br>
-        Анжела Аристакесян, Жанна Арутюнян, Жирайр Чархифалакян, Рипсиме Задурян, Бабкен Самвелян, Гоар Папанян, Рузанна Авагян
+    <div class="intro">
+        <p class="quote">«Врач и писатель — два призвания, которые глубже всех проникают в тайны человеческой души.»</p>
+        <p style="color: #a8c0e0; font-size: 1.3rem;">— Андре Моруа</p>
     </div>
-</header>
 
-<div class="intro">
-    <p class="quote">
-        «Врач и писатель — два призвания, которые глубже всех проникают в тайны человеческой души. 
-        Один лечит тело, другой — душу.»
-    </p>
-    <p style="color: #a8c0e0; font-size: 1.3rem;">— Андре Моруа</p>
-</div>
+    <section class="section">
+        <h2 class="section-title">Известные писатели-врачи</h2>
+        <div class="cards" id="cards"></div>
+    </section>
 
-<section class="section" style="background: rgba(255,255,255,0.03);">
-    <div class="section-title">Цели проекта</div>
-    <p style="max-width: 1000px; margin: 0 auto; font-size: 1.25rem; text-align: center; color: #c0d0e8;">
-        Изучить биографии писателей-врачей и исследовать, как медицинская профессия повлияла на их мировоззрение, 
-        тематику произведений и художественный стиль.
-    </p>
-</section>
+    <section class="section" style="background: rgba(255,255,255,0.03);">
+        <div class="section-title">Итоговые результаты</div>
+        <div style="max-width: 1050px; margin: 0 auto; font-size: 1.2rem; color: #c0d0e8; line-height: 2;">
+            <p>• Глубокое знакомство с жизнью и творчеством выдающихся писателей-врачей разных эпох.</p>
+            <p>• Понимание влияния медицинского опыта на литературу и гуманистические идеи авторов.</p>
+            <p>• Развитие навыков литературного анализа и критического мышления.</p>
+            <p>• Создание итогового веб-сайта и печатного журнала проекта.</p>
+        </div>
+    </section>
 
-<section class="section">
-    <h2 class="section-title">Известные писатели-врачи</h2>
-    <div class="cards" id="cards"></div>
-</section>
-
-<section class="section" style="background: rgba(255,255,255,0.03);">
-    <div class="section-title">Итоговые результаты</div>
-    <div style="max-width: 1050px; margin: 0 auto; font-size: 1.2rem; color: #c0d0e8; line-height: 2;">
-        <p>• Глубокое знакомство с жизнью и творчеством выдающихся писателей-врачей разных эпох.</p>
-        <p>• Понимание влияния медицинского опыта на литературу и гуманистические идеи авторов.</p>
-        <p>• Развитие навыков литературного анализа и критического мышления.</p>
-        <p>• Создание итогового веб-сайта и печатного журнала проекта.</p>
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modal-body"></div>
+        </div>
     </div>
-</section>
 
-<!-- Modal -->
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
-        <div id="modal-body"></div>
-    </div>
-</div>
+    <footer>
+        Гюмрийская старшая школа №1 • Проект «Писатели-врачи» • 2026 год
+    </footer>
 
-<footer>
-    Гюмрийская старшая школа №1 • Проект «Писатели-врачи» • 2026 год
-</footer>
+    <script>
+        const writers = [
+            {
+                name: "Антон Павлович Чехов",
+                img: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Anton_Chekhov_1889.jpg",
+                desc: "Антон Павлович Чехов (1860–1904) — выдающийся русский писатель и врач. Окончил медицинский факультет Московского университета. Работал земским врачом, бесплатно лечил бедных крестьян. Медицина сильно повлияла на его творчество: точность наблюдений, лаконичный стиль и глубокий гуманизм. «Медицина — моя законная жена, а литература — любовница»."
+            },
+            {
+                name: "Михаил Афанасьевич Булгаков",
+                img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg",
+                desc: "Михаил Афанасьевич Булгаков (1891–1940) — русский писатель и драматург. Окончил медицинский факультет Киевского университета. Работал военным и земским врачом. Автор «Записок юного врача» и рассказа «Морфий», где описал собственный опыт. Тема врачебного долга и гуманизма ярко проходит через всё его творчество."
+            },
+            {
+                name: "Артур Конан Дойл",
+                img: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png",
+                desc: "Артур Конан Дойл (1859–1930) — английский писатель, создатель Шерлока Холмса. Получил медицинское образование в Эдинбургском университете. Работал корабельным и военным врачом. Метод дедукции Холмса был вдохновлён его учителем — профессором Джозефом Беллом, мастером медицинской диагностики."
+            },
+            {
+                name: "Рубен Севак",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg",
+                desc: "Рубен Севак (1885–1915) — армянский поэт и врач. Окончил медицинский факультет Лозаннского университета. Автор цикла «Страницы, вырванные из дневника врача». Считал, что врач должен лечить не только тело, но и душу. Трагически погиб во время Геноцида армян в 1915 году."
+            },
+            {
+                name: "Уильям Карлос Уильямс",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/William_Carlos_Williams.jpg/800px-William_Carlos_Williams.jpg",
+                desc: "Уильям Карлос Уильямс (1883–1963) — выдающийся американский поэт и педиатр. Более 40 лет работал врачом в Нью-Джерси. Его поэзия отличается предельной точностью наблюдения за повседневной жизнью. Медицинская практика сильно повлияла на его «объективистский» стиль и внимание к деталям человеческого существования."
+            },
+            {
+                name: "Джон Китс",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/John_Keats_by_William_Hilton.jpg/800px-John_Keats_by_William_Hilton.jpg",
+                desc: "Джон Китс (1795–1821) — великий английский поэт-романтик. Изучал медицину и работал помощником хирурга. Хотя он рано оставил медицину ради поэзии, медицинский опыт и осознание бренности жизни сильно отразились в его одах («Ода греческой вазе», «Ода соловью»). Умер от туберкулёза в 25 лет."
+            },
+            {
+                name: "Франсуа Рабле",
+                img: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Francois_Rabelais.jpg",
+                desc: "Франсуа Рабле (1493–1553) — французский писатель, врач и философ эпохи Возрождения. Работал главным врачом госпиталя в Лионе. Автор знаменитого романа «Гаргантюа и Пантагрюэль». Благодаря медицинскому опыту очень точно и с юмором описывал человеческое тело."
+            },
+            {
+                name: "Владимир Иванович Даль",
+                img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Vladimir_Dal_by_Karl_Bryullov.jpg",
+                desc: "Владимир Иванович Даль (1801–1872) — русский врач, хирург и лексикограф. Окончил Дерптский университет. Участвовал в военных кампаниях как военный врач. Присутствовал при смерти Пушкина. Создал знаменитый «Толковый словарь живого великорусского языка»."
+            }
+        ];
 
-<script>
-// Данные с подробными текстами
-const writers = [
-    {
-        name: "Антон Павлович Чехов",
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Anton_Chekhov_1889.jpg",
-        desc: "Антон Павлович Чехов (1860–1904) — выдающийся русский писатель и врач. Окончил медицинский факультет Московского университета. Работал земским врачом, бесплатно лечил бедных крестьян. Медицина сильно повлияла на его творчество: он обладал исключительной наблюдательностью, точностью описаний и глубоким гуманизмом. Чехов говорил: «Медицина — моя законная жена, а литература — любовница». Его произведения отличаются лаконичным стилем и психологической глубиной."
-    },
-    {
-        name: "Михаил Афанасьевич Булгаков",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg",
-        desc: "Михаил Афанасьевич Булгаков (1891–1940) — русский писатель и драматург. Окончил медицинский факультет Киевского университета. Работал военным врачом во время Первой мировой войны и земским врачом. Автор цикла «Записки юного врача» и рассказа «Морфий», где описал свой собственный опыт борьбы с морфиновой зависимостью. В его творчестве ярко отражена тема врачебного долга и гуманизма."
-    },
-    {
-        name: "Артур Конан Дойл",
-        img: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png",
-        desc: "Артур Конан Дойл (1859–1930) — английский писатель, создатель Шерлока Холмса. Получил медицинское образование в Эдинбургском университете. Работал корабельным и военным врачом. Метод дедукции Холмса был вдохновлён его учителем — профессором Джозефом Беллом, мастером медицинской диагностики."
-    },
-    {
-        name: "Оливер Сакс",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/79/Oliver_Sacks_2012.jpg",
-        desc: "Оливер Сакс (1933–2015) — британский невролог и писатель. Автор знаменитых книг «Человек, который принял свою жену за шляпу», «Пробуждения» и «Галлюцинации».
-С огромным состраданием описывал пациентов с редкими неврологическими расстройствами, сочетая научную точность с литературным мастерством."
-    },
-    {
-        name: "Рубен Севак",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg",
-        desc: "Рубен Севак (1885–1915) — армянский поэт и врач. Окончил медицинский факультет Лозаннского университета. Автор цикла «Страницы, вырванные из дневника врача». Считал, что врач должен лечить не только тело, но и душу пациента. Трагически погиб во время Геноцида армян в 1915 году."
-    },
-    {
-        name: "Франсуа Рабле",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Francois_Rabelais.jpg",
-        desc: "Франсуа Рабле (1493–1553) — французский писатель, врач и философ эпохи Возрождения. Работал главным врачом госпиталя в Лионе. Автор сатирического романа «Гаргантюа и Пантагрюэль». Благодаря медицинскому опыту он очень точно и детально описывал человеческое тело, сочетая это с блестящим юмором."
-    },
-    {
-        name: "Владимир Иванович Даль",
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Vladimir_Dal_by_Karl_Bryullov.jpg",
-        desc: "Владимир Иванович Даль (1801–1872) — русский врач, хирург и лексикограф. Окончил медицинский факультет Дерптского университета. Участвовал в военных кампаниях как военный врач. Присутствовал при смерти Александра Пушкина. Создал знаменитый «Толковый словарь живого великорусского языка»."
-    }
-];
+        function createCards() {
+            const container = document.getElementById('cards');
+            container.innerHTML = '';
+            writers.forEach(writer => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${writer.img}" alt="${writer.name}">
+                    <div class="card-content">
+                        <span class="poet-badge">ПОЭТ-ВРАЧ</span>
+                        <h3>${writer.name}</h3>
+                        <p>${writer.desc.substring(0, 180)}...</p>
+                    </div>
+                `;
+                card.onclick = () => showModal(writer);
+                container.appendChild(card);
+            });
+        }
 
-function createCards() {
-    const container = document.getElementById('cards');
-    container.innerHTML = '';
+        function showModal(writer) {
+            const modal = document.getElementById('modal');
+            const body = document.getElementById('modal-body');
+            body.innerHTML = `
+                <h2 style="color: #d4af37; text-align: center; margin-bottom: 30px;">${writer.name}</h2>
+                <img src="${writer.img}" style="width:100%; border-radius:16px; margin-bottom:30px;" alt="${writer.name}">
+                <p style="font-size:1.25rem; color:#c0d0e8; line-height:1.9;">${writer.desc}</p>
+            `;
+            modal.style.display = 'flex';
+        }
 
-    writers.forEach(writer => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <img src="${writer.img}" alt="${writer.name}">
-            <div class="card-content">
-                <h3>${writer.name}</h3>
-                <p>${writer.desc.substring(0, 185)}...</p>
-            </div>
-        `;
-        card.onclick = () => showModal(writer);
-        container.appendChild(card);
-    });
-}
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
 
-function showModal(writer) {
-    const modal = document.getElementById('modal');
-    const body = document.getElementById('modal-body');
-    
-    body.innerHTML = `
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 30px;">${writer.name}</h2>
-        <img src="${writer.img}" style="width:100%; border-radius:16px; margin-bottom:30px;" alt="${writer.name}">
-        <p style="font-size:1.25rem; color:#c0d0e8; line-height:1.9;">${writer.desc}</p>
-    `;
-    modal.style.display = 'flex';
-}
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
 
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
-
-window.onload = createCards;
-</script>
-
+        window.onload = createCards;
+    </script>
 </body>
 </html>
