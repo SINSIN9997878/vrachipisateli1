@@ -1,123 +1,295 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="hy">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Писатели-врачи | Связь медицины и литературы</title>
-    <meta name="description" content="Школьный проект Гюмрийской старшей школы №1 — Писатели-врачи: влияние медицинской профессии на литературное творчество">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Գրող-բժիշկներ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #0a1f3d;
+            --gold: #d4af37;
+            --light-gold: #f0d48a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a1f3d 0%, #1e3a6b 100%);
+            color: #e0e0e0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(10, 31, 61, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .school {
+            font-size: 1.1rem;
+            color: var(--light-gold);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            color: var(--gold);
+            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #a8c0e0;
+            margin-top: 10px;
+        }
+
+        .project-members {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            color: #b0c4de;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .quote {
+            font-size: 1.45rem;
+            font-style: italic;
+            color: var(--light-gold);
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+
+        .writers-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        .card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #c0d0e8;
+            font-size: 1.05rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 31, 61, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #132b4f;
+            max-width: 700px;
+            width: 90%;
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8899bb;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <div class="header-content">
-        <h1>Писатели-врачи</h1>
-        <p class="subtitle">Связь медицины и литературы</p>
-        
-        <div class="lang-buttons">
-            <button onclick="setLang('ru')" class="active" id="btn-ru">РУС</button>
-            <button onclick="setLang('am')" id="btn-am">ՀԱՅ</button>
-        </div>
+    <div class="school">Գյումրու թիվ 1 ավագ դպրոց</div>
+    <h1>Գրող-բժիշկներ</h1>
+    <p class="subtitle">Բժշկության և գրականության ներդաշնակ կապը</p>
+    <div class="project-members">
+        Ռուսերեն նախագիծ • 2026<br>
+        Անժելա Արիստակեսյան, Ժաննա Արուտյունյան, Ժիրայր Չարխիֆալակյան, Ռիպսիմե Զադուրյան, Բաբկեն Սամվելյան, Գոհար Պապանյան, Ռուզաննա Ավագյան
     </div>
 </header>
 
-<section class="intro">
-    <div class="container">
-        <h2>Введение</h2>
-        <p class="quote">"Оба они, врач и писатель, страстно интересуются людьми..."</p>
-        <p class="author">— Андре Моруа</p>
-        
-        <p>Многие врачи, отведав «сладкую отраву литературного труда», меняли скальпель на перо, чтобы исцелять уже не тело, а душу человека.</p>
-        
-        <div class="project-info">
-            <p><strong>Гюмрийская старшая школа №1</strong></p>
-            <p>Участники проекта: Анжела Аристакесян, Жанна Арутюнян, Жирайр Чархифалакян, Рипсиме Задурян, Бабкен Самвелян, Гоар Папанян, Рузанна Авагян</p>
-        </div>
-    </div>
+<div class="intro">
+    <p class="quote">
+        «Բժիշկն ու գրողը միևնույն մարդն են՝ խորությամբ ուսումնասիրող մարդկային հոգին։<br>
+        Մեկը բուժում է մարմինը, մյուսը՝ հոգին։»
+    </p>
+    <p style="color: #a8c0e0;">— Անդրե Մորուա</p>
+</div>
+
+<section class="writers-section">
+    <h2 class="section-title">Հայտնի գրող-բժիշկներ</h2>
+    
+    <div class="cards" id="cards"></div>
 </section>
 
-<section class="writers">
-    <div class="container">
-        <h2>Известные писатели-врачи</h2>
-        
-        <!-- Армянские авторы -->
-        <div class="writer-grid">
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Anton_Chekhov_1889.jpg/800px-Anton_Chekhov_1889.jpg" alt="Антон Чехов">
-                <h3>Антон Павлович Чехов</h3>
-                <p>Врач и великий русский писатель. Медицина обогатила его наблюдательностью, гуманизмом и точностью стиля.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg" alt="Михаил Булгаков">
-                <h3>Михаил Афанасьевич Булгаков</h3>
-                <p>Автор «Записок юного врача» и «Морфия». Врач, переживший ужасы войны и зависимости.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png" alt="Артур Конан Дойл">
-                <h3>Артур Конан Дойл</h3>
-                <p>Создатель Шерлока Холмса. Медицинская дедукция стала основой знаменитого метода детектива.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Oliver_Sacks_2012.jpg" alt="Оливер Сакс">
-                <h3>Оливер Сакс</h3>
-                <p>Невролог и писатель. Автор книг «Человек, который принял свою жену за шляпу» и «Пробуждения».</p>
-            </div>
-
-            <!-- Армянские писатели-врачи -->
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg" alt="Рубен Севак">
-                <h3>Рубен Севак (Чилинкирян)</h3>
-                <p>Врач и поэт. Автор цикла «Страницы, вырванные из дневника врача». Погиб во время Геноцида армян в 1915 году.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://via.placeholder.com/300x400/8B0000/FFFFFF?text=Церенц" alt="Церенц">
-                <h3>Церенц (Овсеп Шишманян)</h3>
-                <p>Врач и исторический романист. Судебно-медицинский эксперт в Константинополе.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://via.
-placeholder.com/300x400/8B0000/FFFFFF?text=Патканян" alt="Рафаел Патканян">
-                <h3>Рафаел Патканян</h3>
-                <p>Поэт и просветитель. Учился на медицинском факультете, но оставил медицину из-за страха смерти.</p>
-            </div>
-
-            <div class="card" data-lang="ru">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Fran%C3%A7ois_Rabelais.jpg/800px-Fran%C3%A7ois_Rabelais.jpg" alt="Франсуа Рабле">
-                <h3>Франсуа Рабле</h3>
-                <p>Врач, писатель, философ эпохи Возрождения. Автор знаменитого романа «Гаргантюа и Пантагрюэль».</p>
-            </div>
-        </div>
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <div id="modal-body"></div>
     </div>
-</section>
+</div>
 
 <footer>
-    <div class="container">
-        <p>Гюмрийская старшая школа №1 • 2026</p>
-        <p>Проект выполнен учениками 11 класса</p>
-    </div>
+    Գյումրու թիվ 1 ավագ դպրոց • «Գրող-բժիշկներ» նախագիծ 2026
 </footer>
 
 <script>
-function setLang(lang) {
-    document.querySelectorAll('.lang-buttons button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    if(lang === 'am') {
-        document.getElementById('btn-am').classList.add('active');
-        alert('Հայերեն տարբերակը գտնվում է մշակման փուլում։ Շուտով կավելացվի։');
-        // Здесь в будущем можно добавить полный перевод на армянский
-    } else {
-        document.getElementById('btn-ru').classList.add('active');
-        // Сейчас русский — основной язык
+// Տվյալները
+const writers = [
+    {
+        name: "Անտոն Չեխով",
+        img: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Anton_Chekhov_1889.jpg",
+        desc: "Ռուս մեծ գրող և բժիշկ։ Բժշկությունը նրան տվեց մարդկային բնության խոր գիտելիք և հումանիզմ։"
+    },
+    {
+        name: "Միխայիլ Բուլգակով",
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg",
+        desc: "«Երիտասարդ բժշկի գրառումներ» և «Մորֆի» վիպակների հեղինակ։ Պատերազմի և բժշկության փորձը խորապես արտացոլվել է նրա ստեղծագործությունում։"
+    },
+    {
+        name: "Արթուր Կոնան Դոյլ",
+        img: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png",
+        desc: "Շերլոք Հոլմսի ստեղծողը։ Բժշկական դիագնոստիկայից առաջացած դեդուկցիայի մեթոդը կիրառել է գրականության մեջ։"
+    },
+    {
+        name: "Օլիվեր Սաքս",
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/79/Oliver_Sacks_2012.jpg",
+        desc: "Նյարդաբան և գրող։ Նկարագրել է անսովոր նյարդաբանական դեպքեր՝ «Մարդը, ով իր կնոջը շփոթել է գլխարկի հետ» գրքում։"
+    },
+    {
+        name: "Ռուբեն Սևակ",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg",
+        desc: "Հայ բժիշկ և բանաստեղծ։ «Բժշկի օրագրից դուրս գրված էջեր» ցիկլի հեղինակ։"
+    },
+    {
+        name: "Ֆրանսուա Ռաբլե",
+        img: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Francois_Rabelais.jpg",
+        desc: "Վերածննդի դարաշրջանի գրող, բժիշկ և փիլիսոփա։ «Գարգանտյուա և Պանտագրյուել» վեպի հեղինակ։"
     }
+];
+
+// Քարտերի ստեղծում
+function createCards() {
+    const container = document.getElementById('cards');
+    container.innerHTML = '';
+
+    writers.forEach(writer => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${writer.img}" alt="${writer.name}">
+            <div class="card-content">
+                <h3>${writer.name}</h3>
+                <p>${writer.desc}</p>
+            </div>
+        `;
+        card.onclick = () => showModal(writer);
+        container.appendChild(card);
+    });
 }
+
+function showModal(writer) {
+    const modal = document.getElementById('modal');
+    const body = document.getElementById('modal-body');
+    
+    body.innerHTML = `
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 20px;">${writer.name}</h2>
+        <img src="${writer.img}" style="width:100%; border-radius:12px; margin-bottom:20px;" alt="${writer.name}">
+        <p style="font-size:1.15rem; color:#c0d0e8;">${writer.desc}</p>
+        <p style="margin-top:20px; color:#a8c0e0;">Կտտացրեք դրսում՝ փակելու համար։</p>
+    `;
+    modal.style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Փակել մոդալը դրսից կտտացնելիս
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
+window.onload = createCards;
 </script>
 
 </body>
