@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Գրող-բժիշկներ</title>
+    <title>Писатели-врачи | Гюмрийская школа №1</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,125 +12,117 @@
             --light-gold: #f0d48a;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #0a1f3d 0%, #1e3a6b 100%);
             color: #e0e0e0;
-            line-height: 1.7;
+            line-height: 1.75;
             min-height: 100vh;
         }
 
         header {
-            background: rgba(10, 31, 61, 0.95);
-            padding: 2rem 0;
+            background: rgba(10, 31, 61, 0.96);
+            padding: 2.8rem 0;
             text-align: center;
-            border-bottom: 3px solid var(--gold);
+            border-bottom: 4px solid var(--gold);
         }
 
         .school {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: var(--light-gold);
             margin-bottom: 10px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
+            font-size: 3.7rem;
             color: var(--gold);
-            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 5px 20px rgba(212, 175, 55, 0.35);
         }
 
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #a8c0e0;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
-        .project-members {
-            margin-top: 15px;
-            font-size: 1.05rem;
+        .members {
+            margin-top: 18px;
+            font-size: 1.12rem;
             color: #b0c4de;
         }
 
         .intro {
-            max-width: 900px;
-            margin: 60px auto;
+            max-width: 1000px;
+            margin: 80px auto;
             text-align: center;
             padding: 0 20px;
         }
 
         .quote {
-            font-size: 1.45rem;
+            font-size: 1.52rem;
             font-style: italic;
             color: var(--light-gold);
-            margin: 30px 0;
-            line-height: 1.8;
+            margin: 40px 0;
+            line-height: 1.9;
         }
 
-        .writers-section {
+        .section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 70px 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             color: var(--gold);
-            margin-bottom: 50px;
+            margin-bottom: 55px;
             font-family: 'Playfair Display', serif;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
         }
 
         .card {
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            cursor: pointer;
         }
 
         .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+            transform: translateY(-18px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
         }
 
         .card img {
             width: 100%;
-            height: 380px;
+            height: 390px;
             object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .card:hover img {
-            transform: scale(1.08);
         }
 
         .card-content {
-            padding: 25px;
+            padding: 28px;
             text-align: center;
         }
 
         .card h3 {
             color: var(--gold);
-            font-size: 1.6rem;
-            margin-bottom: 12px;
+            font-size: 1.7rem;
+            margin-bottom: 14px;
         }
 
         .card p {
             color: #c0d0e8;
-            font-size: 1.05rem;
+            font-size: 1.08rem;
         }
 
         /* Modal */
@@ -139,7 +131,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(10, 31, 61, 0.95);
+            background: rgba(10, 31, 61, 0.97);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -147,58 +139,78 @@
 
         .modal-content {
             background: #132b4f;
-            max-width: 700px;
-            width: 90%;
+            max-width: 760px;
+            width: 92%;
             border-radius: 20px;
-            padding: 30px;
-            border: 2px solid var(--gold);
+            padding: 40px;
+            border: 3px solid var(--gold);
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .close {
             position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2rem;
+            top: 18px;
+            right: 30px;
+            font-size: 2.8rem;
             color: var(--gold);
             cursor: pointer;
         }
-footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #8899bb;
-            font-size: 1rem;
-        }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
+        footer {
+            text-align: center;
+padding: 60px 20px 40px;
+            color: #8899bb;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="school">Գյումրու թիվ 1 ավագ դպրոց</div>
-    <h1>Գրող-բժիշկներ</h1>
-    <p class="subtitle">Բժշկության և գրականության ներդաշնակ կապը</p>
-    <div class="project-members">
-        Ռուսերեն նախագիծ • 2026<br>
-        Անժելա Արիստակեսյան, Ժաննա Արուտյունյան, Ժիրայր Չարխիֆալակյան, Ռիպսիմե Զադուրյան, Բաբկեն Սամվելյան, Գոհար Պապանյան, Ռուզաննա Ավագյան
+    <div class="school">Гюмрийская старшая школа №1</div>
+    <h1>Писатели-врачи</h1>
+    <p class="subtitle">Связь медицины и литературы</p>
+    <div class="members">
+        Русский проект • 2026<br>
+        Анжела Аристакесян • Жанна Арутюнян • Жирайр Чархифалакян • Рипсиме Задурян • Бабкен Самвелян • Гоар Папанян • Рузанна Авагян
     </div>
 </header>
 
 <div class="intro">
     <p class="quote">
-        «Բժիշկն ու գրողը միևնույն մարդն են՝ խորությամբ ուսումնասիրող մարդկային հոգին։<br>
-        Մեկը բուժում է մարմինը, մյուսը՝ հոգին։»
+        «Врач и писатель — два человека, которые глубже всех проникают в человеческую природу. 
+        Один лечит тело, другой — душу. Оба они забывают о себе, всматриваясь в жизнь других.»
     </p>
-    <p style="color: #a8c0e0;">— Անդրե Մորուա</p>
+    <p style="color: #a8c0e0; font-size: 1.25rem;">— Андре Моруа</p>
 </div>
 
-<section class="writers-section">
-    <h2 class="section-title">Հայտնի գրող-բժիշկներ</h2>
-    
+<!-- Цели проекта -->
+<section class="section" style="background: rgba(255,255,255,0.03);">
+    <div class="section-title">Цели и задачи проекта</div>
+    <div style="max-width: 950px; margin: 0 auto; font-size: 1.22rem; color: #c0d0e8; text-align: center;">
+        <p>Изучить биографии выдающихся писателей, которые совмещали медицинскую практику с литературным творчеством, 
+        и исследовать, как профессия врача повлияла на их мировоззрение, тематику произведений, художественные образы и стиль письма.</p>
+    </div>
+</section>
+
+<!-- Писатели -->
+<section class="section">
+    <h2 class="section-title">Известные писатели-врачи</h2>
     <div class="cards" id="cards"></div>
+</section>
+
+<!-- Итоговые результаты -->
+<section class="section" style="background: rgba(255,255,255,0.03);">
+    <div class="section-title">Итоговые результаты проекта</div>
+    <div style="max-width: 1000px; margin: 0 auto; font-size: 1.18rem; color: #c0d0e8; line-height: 2;">
+        <p>• Учащиеся глубоко познакомятся с жизнью и творчеством известных писателей-врачей разных эпох и народов.</p>
+        <p>• Поймут, как медицинский опыт формирует особый гуманистический взгляд на человека, страдание, жизнь и смерть.</p>
+        <p>• Научатся анализировать художественные произведения с учётом биографии и профессионального опыта автора.</p>
+        <p>• Разовьют навыки сравнительного анализа, критического мышления и публичного выступления.</p>
+        <p>• Создадут итоговый проект (журнал или веб-сайт), который продемонстрирует связь медицины и литературы.</p>
+    </div>
 </section>
 
 <!-- Modal -->
@@ -210,45 +222,50 @@ footer {
 </div>
 
 <footer>
-    Գյումրու թիվ 1 ավագ դպրոց • «Գրող-բժիշկներ» նախագիծ 2026
+    Гюмрийская старшая школа №1 • Проект «Писатели-врачи» • 2026
 </footer>
 
 <script>
-// Տվյալները
+// Расширенные данные с более подробными описаниями
 const writers = [
     {
-        name: "Անտոն Չեխով",
+        name: "Антон Павлович Чехов",
         img: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Anton_Chekhov_1889.jpg",
-        desc: "Ռուս մեծ գրող և բժիշկ։ Բժշկությունը նրան տվեց մարդկային բնության խոր գիտելիք և հումանիզմ։"
+        desc: "Великий русский писатель и врач. Окончил медицинский факультет Московского университета. Работал земским врачом, бесплатно лечил бедных. Медицина оказала огромное влияние на его творчество: точность наблюдения, лаконичность стиля, глубокий психологизм и гуманизм. Сам Чехов говорил: «Медицина — моя законная жена, а литература — любовница»."
     },
     {
-        name: "Միխայիլ Բուլգակով",
+        name: "Михаил Афанасьевич Булгаков",
         img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mikhail_Bulgakov.jpg",
-        desc: "«Երիտասարդ բժշկի գրառումներ» և «Մորֆի» վիպակների հեղինակ։ Պատերազմի և բժշկության փորձը խորապես արտացոլվել է նրա ստեղծագործությունում։"
+        desc: "Русский писатель и драматург. Окончил медицинский факультет Киевского университета. Работал военным врачом во время Первой мировой и Гражданской войн. Автор знаменитого цикла «Записки юного врача» и рассказа «Морфий», где с медицинской точностью описал собственный опыт борьбы с морфиновой зависимостью. Тема «чистых рук» врача проходит через всё его творчество."
     },
     {
-        name: "Արթուր Կոնան Դոյլ",
+        name: "Артур Конан Дойл",
         img: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png",
-        desc: "Շերլոք Հոլմսի ստեղծողը։ Բժշկական դիագնոստիկայից առաջացած դեդուկցիայի մեթոդը կիրառել է գրականության մեջ։"
+        desc: "Английский писатель, создатель образа Шерлока Холмса. Получил медицинское образование в Эдинбургском университете.
+Работал корабельным врачом и военным врачом. Метод дедукции, которым знаменит Холмс, был заимствован у его учителя — профессора Джозефа Белла, известного диагностика."
     },
     {
-        name: "Օլիվեր Սաքս",
+        name: "Оливер Сакс",
         img: "https://upload.wikimedia.org/wikipedia/commons/7/79/Oliver_Sacks_2012.jpg",
-        desc: "Նյարդաբան և գրող։ Նկարագրել է անսովոր նյարդաբանական դեպքեր՝ «Մարդը, ով իր կնոջը շփոթել է գլխարկի հետ» գրքում։"
+        desc: "Британский невролог, писатель и популяризатор науки. Автор мировых бестселлеров «Человек, который принял свою жену за шляпу», «Пробуждения» и «Галлюцинации». В своих книгах он с огромным состраданием и литературным мастерством описывает необычные неврологические случаи, показывая сложность и красоту человеческого сознания."
     },
     {
-        name: "Ռուբեն Սևակ",
+        name: "Рубен Севак (Чилинкирян)",
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ruben_Sevak.jpg/800px-Ruben_Sevak.jpg",
-        desc: "Հայ բժիշկ և բանաստեղծ։ «Բժշկի օրագրից դուրս գրված էջեր» ցիկլի հեղինակ։"
+        desc: "Выдающийся армянский поэт и врач. Окончил медицинский факультет Лозаннского университета в Швейцарии. Работал врачом в Лозанне и Константинополе. Автор прозаического цикла «Страницы, вырванные из дневника врача». Погиб во время Геноцида армян в 1915 году. Лечил не только тело, но и душу своих пациентов."
     },
     {
-        name: "Ֆրանսուա Ռաբլե",
+        name: "Франсуа Рабле",
         img: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Francois_Rabelais.jpg",
-        desc: "Վերածննդի դարաշրջանի գրող, բժիշկ և փիլիսոփա։ «Գարգանտյուա և Պանտագրյուել» վեպի հեղինակ։"
+        desc: "Французский писатель, врач, богослов и философ эпохи Возрождения. Работал главным врачом госпиталя в Лионе и профессором анатомии. Автор знаменитого сатирического романа «Гаргантюа и Пантагрюэль». Его произведения сочетают медицинскую точность описания человеческого тела с блестящим юмором и философской глубиной."
+    },
+    {
+        name: "Владимир Иванович Даль",
+        img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Vladimir_Dal_by_Karl_Bryullov.jpg",
+        desc: "Русский врач, хирург, писатель и лексикограф. Окончил медицинский факультет Дерптского университета. Участвовал в Русско-турецкой и Польской кампаниях как военный врач. Лечил А.С. Пушкина после дуэли. Автор монументального «Толкового словаря живого великорусского языка» — главного труда своей жизни."
     }
 ];
 
-// Քարտերի ստեղծում
 function createCards() {
     const container = document.getElementById('cards');
     container.innerHTML = '';
@@ -260,7 +277,7 @@ function createCards() {
             <img src="${writer.img}" alt="${writer.name}">
             <div class="card-content">
                 <h3>${writer.name}</h3>
-                <p>${writer.desc}</p>
+                <p>${writer.desc.substring(0, 180)}...</p>
             </div>
         `;
         card.onclick = () => showModal(writer);
@@ -273,18 +290,17 @@ function showModal(writer) {
     const body = document.getElementById('modal-body');
     
     body.innerHTML = `
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 20px;">${writer.name}</h2>
-        <img src="${writer.img}" style="width:100%; border-radius:12px; margin-bottom:20px;" alt="${writer.name}">
-        <p style="font-size:1.15rem; color:#c0d0e8;">${writer.desc}</p>
-        <p style="margin-top:20px; color:#a8c0e0;">Կտտացրեք դրսում՝ փակելու համար։</p>
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 25px;">${writer.name}</h2>
+        <img src="${writer.img}" style="width:100%; border-radius:14px; margin-bottom:25px;" alt="${writer.name}">
+        <p style="font-size:1.22rem; color:#c0d0e8; line-height:1.85;">${writer.desc}</p>
     `;
     modal.style.display = 'flex';
 }
+
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Փակել մոդալը դրսից կտտացնելիս
 document.getElementById('modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
 });
